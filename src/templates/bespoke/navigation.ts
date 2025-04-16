@@ -26,7 +26,7 @@ const hasScrollableOverflow = (style: CSSStyleDeclaration, dir: Direction) => {
 }
 
 const bespokeNavigation =
-  ({ interval = 250 }: BespokeNavigationOption = {}) =>
+  ({ interval = 0 }: BespokeNavigationOption = {}) =>
   (deck) => {
     document.addEventListener('keydown', (e) => {
       if (e.key === ' ' && e.shiftKey) {
