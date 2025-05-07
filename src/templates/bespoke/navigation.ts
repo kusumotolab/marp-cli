@@ -29,6 +29,7 @@ const bespokeNavigation =
   ({ interval = 0 }: BespokeNavigationOption = {}) =>
   (deck) => {
     document.addEventListener('keydown', (e) => {
+      if (e.altKey || e.ctrlKey || e.metaKey) return  // Ignore if modifier key is down to use default browser shortcut
       if (e.key === ' ' && e.shiftKey) {
         deck.prev() // Previous page
       } else if (
