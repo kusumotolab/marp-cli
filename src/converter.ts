@@ -94,6 +94,7 @@ export interface ConverterOption {
   themeSet: ThemeSet
   type: ConvertType
   watch: boolean | WatchNotifierEntrypointType
+  cleanUrls: boolean
 }
 
 export interface ConvertFileOption {

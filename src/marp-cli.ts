@@ -398,6 +398,11 @@ export const marpCli = async (
           group: OptionGroup.Marp,
           type: 'string',
         },
+        cleanUrls: {
+          describe: 'Remove extension parameter in url',
+          group: OptionGroup.Marp,
+          type: 'boolean',
+        },
       })
       .fail((msg, _err, yargs) => {
         console.error(yargs.help())

@@ -60,6 +60,7 @@ interface IMarpCLIArguments {
   title?: string
   url?: string
   watch?: boolean
+  cleanUrls?: boolean
 }
 
 export type IMarpCLIConfig = Overwrite<
@@ -94,6 +95,7 @@ export type IMarpCLIConfig = Overwrite<
           headings?: boolean
         }
     themeSet?: string | string[]
+    cleanUrls?: boolean
   }
 >
 
@@ -395,6 +397,7 @@ export class MarpCLIConfig {
       options: this.conf.options || {},
       pages: !!(this.args.images || this.conf.images),
       watch: (this.args.watch ?? this.conf.watch) || preview || server || false,
+      cleanUrls: this.args.cleanUrls ?? this.conf.cleanUrls ?? false,
     } as const satisfies Partial<ConverterOption>
   }
 

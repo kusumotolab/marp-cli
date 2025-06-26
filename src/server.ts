@@ -237,6 +237,14 @@ export class Server extends (EventEmitter as new () => TypedEmitter<Server.Event
     relativePath: string,
     fetchedStats?: fs.Stats
   ): Promise<Server.ValidateResult> {
+
+    // CleanUrls
+    if (!path.extname(relativePath).slice(1) // have no extension
+       && this.converter.options.cleanUrls // enable cleanUrls
+       && relativePath !== '/') { // not root access
+      relativePath = relativePath + '.md'
+    }
+
     // Check extension
     const extension = path.extname(relativePath).slice(1)
     let valid = markdownExtensions.includes(extension)
