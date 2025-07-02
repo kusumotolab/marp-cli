@@ -41,7 +41,7 @@ const bespokeTemplate = (target = document.getElementById(':$p')!) => {
       [[1, 0, 0], bespokeInactive()],
       [[1, 1, 1], bespokeLoad],
       [[1, 1, 1], bespokeState({ history: false })],
-      [[1, 1, 0], bespokeNavigation()],
+      [[1, 1, 0], bespokeNavigation({ interval: 0 })],
       [[1, 1, 0], bespokeFullscreen],
       [[1, 0, 0], bespokeProgress],
       [[1, 1, 0], bespokeTouch()],

@@ -26,7 +26,7 @@ const hasScrollableOverflow = (style: CSSStyleDeclaration, dir: Direction) => {
 }
 
 const bespokeNavigation =
-  ({ interval = 0 }: BespokeNavigationOption = {}) =>
+  ({ interval = 250 }: BespokeNavigationOption = {}) =>
   (deck) => {
     document.addEventListener('keydown', (e) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return  // Ignore if modifier key is down to use default browser shortcut
